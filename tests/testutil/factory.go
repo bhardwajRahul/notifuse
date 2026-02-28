@@ -390,6 +390,46 @@ func (tdf *TestDataFactory) CreateContactTimelineEvent(workspaceID, email, kind 
 	return nil
 }
 
+// CreateContactTimelineEventAt creates a timeline event for a contact at a specific timestamp
+func (tdf *TestDataFactory) CreateContactTimelineEventAt(workspaceID, email, kind string, metadata map[string]interface{}, createdAt time.Time) error {
+	// Get workspace database connection
+	workspaceDB, err := tdf.workspaceRepo.GetConnection(context.Background(), workspaceID)
+	if err != nil {
+		return fmt.Errorf("failed to get workspace database: %w", err)
+	}
+
+	// Extract entity_id and entity_type from metadata if present
+	var entityID *string
+	entityType := "message_history" // default
+	if metadata != nil {
+		if id, ok := metadata["entity_id"].(string); ok && id != "" {
+			entityID = &id
+		}
+		if et, ok := metadata["entity_type"].(string); ok && et != "" {
+			entityType = et
+		}
+	}
+
+	// Serialize metadata to JSON
+	metadataJSON, err := json.Marshal(metadata)
+	if err != nil {
+		return fmt.Errorf("failed to marshal metadata: %w", err)
+	}
+
+	// Insert timeline event directly into workspace database
+	query := `
+		INSERT INTO contact_timeline (email, operation, entity_type, kind, changes, entity_id, created_at)
+		VALUES ($1, $2, $3, $4, $5, $6, $7)
+	`
+
+	_, err = workspaceDB.ExecContext(context.Background(), query, email, "insert", entityType, kind, metadataJSON, entityID, createdAt)
+	if err != nil {
+		return fmt.Errorf("failed to insert contact timeline event: %w", err)
+	}
+
+	return nil
+}
+
 // CreateCustomEvent creates a custom event which triggers the timeline event with proper format
 // This is used for testing automations with custom_event triggers
 func (tdf *TestDataFactory) CreateCustomEvent(workspaceID, email, eventName string, properties map[string]interface{}) error {

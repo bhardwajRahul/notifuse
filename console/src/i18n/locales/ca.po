@@ -331,7 +331,7 @@ msgstr "800 - Extra negreta"
 msgid "900 - Black"
 msgstr "900 - Negre"
 
-#: src/components/segment/input.tsx:838
+#: src/components/segment/input.tsx:858
 msgid "A branch condition is required..."
 msgstr "Es requereix una condició de branca..."
 
@@ -362,7 +362,7 @@ msgstr ""
 msgid "A tree is required"
 msgstr "Es requereix un arbre"
 
-#: src/components/segment/input.tsx:927
+#: src/components/segment/input.tsx:947
 msgid "A value is required..."
 msgstr "Es requereix un valor..."
 
@@ -422,8 +422,8 @@ msgid "Active subscriber"
 msgstr "Subscriptor actiu"
 
 #: src/components/contacts/ContactDetailsDrawer.tsx:1045
-#: src/components/segment/form_leaf.tsx:262
-#: src/components/segment/input.tsx:706
+#: src/components/segment/form_leaf.tsx:264
+#: src/components/segment/input.tsx:716
 #: src/components/segment/table_tag.tsx:30
 msgid "Activity"
 msgstr "Activitat"
@@ -621,8 +621,8 @@ msgstr "Configuració avançada"
 msgid "Affects how columns stack on mobile devices"
 msgstr "Afecta com s'apilen les columnes en dispositius mòbils"
 
-#: src/components/segment/input.tsx:662
-#: src/components/segment/input.tsx:777
+#: src/components/segment/input.tsx:672
+#: src/components/segment/input.tsx:797
 msgid "after"
 msgstr "Després"
 
@@ -632,12 +632,12 @@ msgstr "Després"
 msgid "After {0} hours based on highest {1}"
 msgstr "Després de {0} hores basat en el màxim {1}"
 
-#: src/components/segment/form_leaf.tsx:344
-#: src/components/segment/form_leaf.tsx:653
+#: src/components/segment/form_leaf.tsx:379
+#: src/components/segment/form_leaf.tsx:688
 msgid "after date"
 msgstr "després de la data"
 
-#: src/components/segment/form_leaf.tsx:569
+#: src/components/segment/form_leaf.tsx:604
 msgid "Aggregate"
 msgstr "Agregar"
 
@@ -690,7 +690,7 @@ msgstr "Alineació"
 msgid "All"
 msgstr "Tot"
 
-#: src/components/segment/input.tsx:864
+#: src/components/segment/input.tsx:884
 msgid "ALL"
 msgstr "Tot"
 
@@ -765,16 +765,16 @@ msgstr "Àncora"
 msgid "Anchor ID"
 msgstr "ID d'àncora"
 
-#: src/components/segment/form_leaf.tsx:609
-#: src/components/segment/input.tsx:615
+#: src/components/segment/form_leaf.tsx:644
+#: src/components/segment/input.tsx:625
 msgid "and"
 msgstr "I"
 
-#: src/components/segment/input.tsx:109
+#: src/components/segment/input.tsx:118
 msgid "AND | OR"
 msgstr "I | O"
 
-#: src/components/segment/input.tsx:865
+#: src/components/segment/input.tsx:885
 msgid "ANY"
 msgstr "Qualsevol"
 
@@ -782,10 +782,14 @@ msgstr "Qualsevol"
 msgid "Any field change triggers automation"
 msgstr "Qualsevol canvi de camp activa l'automatització"
 
-#: src/components/segment/form_leaf.tsx:341
-#: src/components/segment/form_leaf.tsx:650
-#: src/components/segment/input.tsx:628
-#: src/components/segment/input.tsx:743
+#: src/components/segment/form_leaf.tsx:328
+msgid "Any template"
+msgstr ""
+
+#: src/components/segment/form_leaf.tsx:376
+#: src/components/segment/form_leaf.tsx:685
+#: src/components/segment/input.tsx:638
+#: src/components/segment/input.tsx:763
 msgid "anytime"
 msgstr "en qualsevol moment"
 
@@ -882,7 +886,7 @@ msgid "Are you sure you want to delete the post"
 msgstr "Esteu segur que voleu eliminar la publicació"
 
 #: src/components/email_builder/panels/TreePanel.tsx:214
-#: src/components/email_builder/ui/BlockToolbar.tsx:215
+#: src/components/email_builder/ui/BlockToolbar.tsx:185
 msgid "Are you sure you want to delete this block?"
 msgstr "Esteu segur que voleu eliminar aquest bloc?"
 
@@ -955,13 +959,13 @@ msgstr "Índex de matriu: {segment}"
 msgid "Ask me to help write your blog..."
 msgstr "Demaneu-me que us ajudi a escriure el vostre blog..."
 
-#: src/components/segment/form_leaf.tsx:312
-#: src/components/segment/input.tsx:728
+#: src/components/segment/form_leaf.tsx:347
+#: src/components/segment/input.tsx:748
 msgid "at least"
 msgstr "com a mínim"
 
-#: src/components/segment/form_leaf.tsx:313
-#: src/components/segment/input.tsx:729
+#: src/components/segment/form_leaf.tsx:348
+#: src/components/segment/input.tsx:749
 msgid "at most"
 msgstr "com a màxim"
 
@@ -1176,13 +1180,13 @@ msgstr "CCO"
 msgid "BCC Recipients"
 msgstr "Destinataris CCO"
 
-#: src/components/segment/input.tsx:654
-#: src/components/segment/input.tsx:769
+#: src/components/segment/input.tsx:664
+#: src/components/segment/input.tsx:789
 msgid "before"
 msgstr "Abans"
 
-#: src/components/segment/form_leaf.tsx:343
-#: src/components/segment/form_leaf.tsx:652
+#: src/components/segment/form_leaf.tsx:378
+#: src/components/segment/form_leaf.tsx:687
 msgid "before date"
 msgstr "abans de la data"
 
@@ -1198,8 +1202,8 @@ msgstr "Pertany com a mínim a un dels segments següents"
 msgid "Best practices:"
 msgstr "Millors pràctiques:"
 
-#: src/components/segment/input.tsx:642
-#: src/components/segment/input.tsx:757
+#: src/components/segment/input.tsx:652
+#: src/components/segment/input.tsx:777
 msgid "between"
 msgstr "Entre"
 
@@ -1208,16 +1212,16 @@ msgid "Blacklisted"
 msgstr "A la llista negra"
 
 #. placeholder {0}: selectedBlock?.name
-#: src/components/email_builder/ui/BlockToolbar.tsx:119
+#: src/components/email_builder/ui/BlockToolbar.tsx:117
 msgid "Block \"{0}\" updated"
 msgstr "Bloc \"{0}\" actualitzat"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:264
+#: src/components/email_builder/ui/BlockToolbar.tsx:234
 msgid "Block Name"
 msgstr "Nom del bloc"
 
 #. placeholder {0}: saveBlockName.trim()
-#: src/components/email_builder/ui/BlockToolbar.tsx:114
+#: src/components/email_builder/ui/BlockToolbar.tsx:112
 msgid "Block saved as \"{0}\""
 msgstr "Bloc desat com a \"{0}\""
 
@@ -1225,7 +1229,7 @@ msgstr "Bloc desat com a \"{0}\""
 msgid "Block Settings Panel"
 msgstr "Panell de configuració del bloc"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:248
+#: src/components/email_builder/ui/BlockToolbar.tsx:218
 msgid "Block type:"
 msgstr "Tipus de bloc:"
 
@@ -1349,8 +1353,8 @@ msgstr "Categoria de rebot"
 msgid "Bounce Diagnostic:"
 msgstr "Diagnòstic de rebot:"
 
-#: src/components/segment/form_leaf.tsx:294
-#: src/components/segment/input.tsx:717
+#: src/components/segment/form_leaf.tsx:296
+#: src/components/segment/input.tsx:727
 msgid "Bounce email"
 msgstr "Correu de rebot"
 
@@ -1545,7 +1549,7 @@ msgstr "Mida del botó"
 #: src/components/contacts/InlineEditableField.tsx:299
 #: src/components/email_builder/blocks/MjStyleBlock.tsx:155
 #: src/components/email_builder/panels/Preview.tsx:182
-#: src/components/email_builder/ui/BlockToolbar.tsx:240
+#: src/components/email_builder/ui/BlockToolbar.tsx:210
 #: src/components/email_builder/ui/CodeDrawerInput.tsx:139
 #: src/components/email_builder/ui/CodeDrawerInput.tsx:179
 #: src/components/email_builder/ui/ImportFontInput.tsx:173
@@ -1560,7 +1564,7 @@ msgstr "Mida del botó"
 #: src/components/file_manager/fileManager.tsx:1130
 #: src/components/segment/button_upsert.tsx:347
 #: src/components/segment/input_dimension_filters.tsx:162
-#: src/components/segment/input.tsx:376
+#: src/components/segment/input.tsx:385
 #: src/components/settings/BlogSettings.tsx:181
 #: src/components/settings/CustomFieldsConfiguration.tsx:273
 #: src/components/settings/EditPermissionsModal.tsx:121
@@ -1708,7 +1712,7 @@ msgstr "Comprovar"
 msgid "Check for Updates"
 msgstr "Comprovar actualitzacions"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:279
+#: src/components/email_builder/ui/BlockToolbar.tsx:249
 msgid "Choose a saved block to update"
 msgstr "Trieu un bloc desat per actualitzar"
 
@@ -1740,8 +1744,8 @@ msgstr "Esborrar tot"
 msgid "Clear field"
 msgstr "Esborrar camp"
 
-#: src/components/segment/form_leaf.tsx:293
-#: src/components/segment/input.tsx:716
+#: src/components/segment/form_leaf.tsx:295
+#: src/components/segment/input.tsx:726
 msgid "Click email"
 msgstr "Correu de clic"
 
@@ -1789,7 +1793,7 @@ msgstr "Clics"
 msgid "Clone"
 msgstr "Clonar"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:182
+#: src/components/email_builder/ui/BlockToolbar.tsx:152
 msgid "Clone Block"
 msgstr "Clonar bloc"
 
@@ -1853,7 +1857,7 @@ msgstr "Amplada de columna (p. ex., '50%', '300px', 'auto')"
 msgid "Common ports: 587 (TLS), 465 (SSL), 25 (unencrypted)"
 msgstr "Ports comuns: 587 (TLS), 465 (SSL), 25 (sense xifrar)"
 
-#: src/components/segment/form_leaf.tsx:585
+#: src/components/segment/form_leaf.tsx:620
 msgid "Comparison"
 msgstr "Comparació"
 
@@ -1861,8 +1865,8 @@ msgstr "Comparació"
 msgid "Compilation Results"
 msgstr "Resultats de la compilació"
 
-#: src/components/segment/form_leaf.tsx:295
-#: src/components/segment/input.tsx:718
+#: src/components/segment/form_leaf.tsx:297
+#: src/components/segment/input.tsx:728
 msgid "Complain email"
 msgstr "Correu de queixa"
 
@@ -1917,7 +1921,7 @@ msgstr "Completat"
 msgid "condition"
 msgstr "Condició"
 
-#: src/components/segment/input.tsx:917
+#: src/components/segment/input.tsx:937
 msgid "Condition"
 msgstr "Condició"
 
@@ -1988,10 +1992,10 @@ msgstr "Configurant {0}"
 #: src/components/filters/Filter.tsx:184
 #: src/components/filters/Filter.tsx:203
 #: src/components/segment/button_upsert.tsx:356
-#: src/components/segment/form_leaf.tsx:99
-#: src/components/segment/form_leaf.tsx:216
-#: src/components/segment/form_leaf.tsx:486
-#: src/components/segment/form_leaf.tsx:759
+#: src/components/segment/form_leaf.tsx:101
+#: src/components/segment/form_leaf.tsx:218
+#: src/components/segment/form_leaf.tsx:521
+#: src/components/segment/form_leaf.tsx:794
 #: src/components/segment/input_dimension_filters.tsx:160
 msgid "Confirm"
 msgstr "Confirmar"
@@ -2068,8 +2072,8 @@ msgstr "El contacte té estat pendent, donat de baixa, rebotat o amb queixa"
 msgid "Contact is not subscribed to this list"
 msgstr "El contacte no està subscrit a aquesta llista"
 
-#: src/components/segment/form_leaf.tsx:71
-#: src/components/segment/input.tsx:700
+#: src/components/segment/form_leaf.tsx:73
+#: src/components/segment/input.tsx:710
 #: src/components/segment/table_tag.tsx:20
 msgid "Contact property"
 msgstr "Propietat del contacte"
@@ -2605,10 +2609,10 @@ msgstr "Discontinu"
 msgid "Date"
 msgstr "Data"
 
-#: src/components/segment/form_leaf.tsx:381
-#: src/components/segment/form_leaf.tsx:688
-#: src/components/segment/input.tsx:637
-#: src/components/segment/input.tsx:752
+#: src/components/segment/form_leaf.tsx:416
+#: src/components/segment/form_leaf.tsx:723
+#: src/components/segment/input.tsx:647
+#: src/components/segment/input.tsx:772
 msgid "days"
 msgstr "Dies"
 
@@ -2685,7 +2689,7 @@ msgstr "Retard"
 #: src/components/file_manager/fileManager.tsx:773
 #: src/components/file_manager/fileManager.tsx:778
 #: src/components/file_manager/fileManager.tsx:951
-#: src/components/segment/input.tsx:374
+#: src/components/segment/input.tsx:383
 #: src/components/settings/Integrations.tsx:312
 #: src/components/settings/Integrations.tsx:1183
 #: src/components/settings/Integrations.tsx:1342
@@ -2718,7 +2722,7 @@ msgstr "Eliminar automatització?"
 msgid "Delete block"
 msgstr "Eliminar bloc"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:214
+#: src/components/email_builder/ui/BlockToolbar.tsx:184
 msgid "Delete Block"
 msgstr "Eliminar bloc"
 
@@ -2941,11 +2945,11 @@ msgstr "Registre DNS requerit:"
 msgid "DNS verification prevents domain squatting"
 msgstr "La verificació DNS evita l'ocupació de dominis"
 
-#: src/components/segment/input.tsx:372
+#: src/components/segment/input.tsx:381
 msgid "Do you really want to remove this branch?"
 msgstr "Esteu segur que voleu treure aquesta branca?"
 
-#: src/components/segment/input.tsx:372
+#: src/components/segment/input.tsx:381
 msgid "Do you really want to remove this condition?"
 msgstr "Esteu segur que voleu treure aquesta condició?"
 
@@ -3471,7 +3475,7 @@ msgstr "Inscrit"
 msgid "Enter {0}"
 msgstr "Introduïu {0}"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:266
+#: src/components/email_builder/ui/BlockToolbar.tsx:236
 msgid "Enter a name for this block"
 msgstr "Introduïu un nom per a aquest bloc"
 
@@ -3735,8 +3739,8 @@ msgstr "Esdeveniments"
 msgid "Every time"
 msgstr "Cada vegada"
 
-#: src/components/segment/form_leaf.tsx:314
-#: src/components/segment/input.tsx:730
+#: src/components/segment/form_leaf.tsx:349
+#: src/components/segment/input.tsx:750
 msgid "exactly"
 msgstr "exactament"
 
@@ -3749,8 +3753,12 @@ msgid "Exclude Unsubscribed"
 msgstr "Excloure donats de baixa"
 
 #: src/components/broadcasts/UpsertBroadcastDrawer.tsx:599
-msgid "Exclude unsubscribed recipients"
-msgstr "Excloure destinataris donats de baixa"
+#~ msgid "Exclude unsubscribed recipients"
+#~ msgstr "Excloure destinataris donats de baixa"
+
+#: src/components/broadcasts/UpsertBroadcastDrawer.tsx:599
+msgid "Exclude unsubscribed, bounced & complained recipients"
+msgstr ""
 
 #: src/components/timeline/ContactTimeline.tsx:737
 msgid "exited"
@@ -4619,8 +4627,8 @@ msgstr "L'URL del feed global és requerida quan està habilitat"
 msgid "Go to Sign In"
 msgstr "Anar a iniciar sessió"
 
-#: src/components/segment/form_leaf.tsx:527
-#: src/components/segment/input.tsx:590
+#: src/components/segment/form_leaf.tsx:562
+#: src/components/segment/input.tsx:600
 msgid "Goal"
 msgstr "Objectiu"
 
@@ -4648,8 +4656,8 @@ msgstr "Grup (arrossegueu columnes aquí)"
 msgid "Group Attributes"
 msgstr "Atributs del grup"
 
-#: src/components/segment/form_leaf.tsx:305
-#: src/components/segment/input.tsx:726
+#: src/components/segment/form_leaf.tsx:340
+#: src/components/segment/input.tsx:746
 msgid "happened"
 msgstr "ha passat"
 
@@ -5012,8 +5020,8 @@ msgstr "Important fitxers..."
 msgid "in {0}"
 msgstr "a {0}"
 
-#: src/components/segment/form_leaf.tsx:342
-#: src/components/segment/form_leaf.tsx:651
+#: src/components/segment/form_leaf.tsx:377
+#: src/components/segment/form_leaf.tsx:686
 msgid "in date range"
 msgstr "en rang de dates"
 
@@ -5021,10 +5029,10 @@ msgstr "en rang de dates"
 msgid "in recipients timezone"
 msgstr "en el fus horari dels destinataris"
 
-#: src/components/segment/form_leaf.tsx:345
-#: src/components/segment/form_leaf.tsx:654
-#: src/components/segment/input.tsx:633
-#: src/components/segment/input.tsx:748
+#: src/components/segment/form_leaf.tsx:380
+#: src/components/segment/form_leaf.tsx:689
+#: src/components/segment/input.tsx:643
+#: src/components/segment/input.tsx:768
 msgid "in the last"
 msgstr "en els últims"
 
@@ -5229,18 +5237,18 @@ msgid "Invite Member"
 msgstr "Convidar membre"
 
 #: src/components/file_manager/context.tsx:201
-#: src/components/segment/form_leaf.tsx:578
-#: src/components/segment/input.tsx:606
+#: src/components/segment/form_leaf.tsx:613
+#: src/components/segment/input.tsx:616
 msgid "is"
 msgstr "és"
 
-#: src/components/segment/form_leaf.tsx:157
-#: src/components/segment/input.tsx:544
+#: src/components/segment/form_leaf.tsx:159
+#: src/components/segment/input.tsx:554
 msgid "is in"
 msgstr "està a"
 
-#: src/components/segment/form_leaf.tsx:158
-#: src/components/segment/input.tsx:544
+#: src/components/segment/form_leaf.tsx:160
+#: src/components/segment/input.tsx:554
 msgid "is not in"
 msgstr "no està a"
 
@@ -5497,8 +5505,8 @@ msgstr "ID de llista: {0}"
 msgid "List Status"
 msgstr "Estat de la llista"
 
-#: src/components/segment/form_leaf.tsx:142
-#: src/components/segment/input.tsx:542
+#: src/components/segment/form_leaf.tsx:144
+#: src/components/segment/input.tsx:552
 #: src/components/segment/table_tag.tsx:25
 msgid "List subscription"
 msgstr "Subscripció a llista"
@@ -5937,8 +5945,8 @@ msgstr "Nova carpeta"
 msgid "New magic code sent to your email"
 msgstr "Nou codi màgic enviat al teu correu"
 
-#: src/components/segment/form_leaf.tsx:291
-#: src/components/segment/input.tsx:722
+#: src/components/segment/form_leaf.tsx:293
+#: src/components/segment/input.tsx:732
 msgid "New message (email...)"
 msgstr "Nou missatge (correu...)"
 
@@ -6384,7 +6392,7 @@ msgstr "Obteniu-ho utilitzant el OAuth2 playground o el vostre propi flux OAuth"
 msgid "Occurred:"
 msgstr "Ocorregut:"
 
-#: src/components/segment/input.tsx:867
+#: src/components/segment/input.tsx:887
 msgid "of the following conditions match:"
 msgstr "de les condicions següents coincideixen:"
 
@@ -6419,8 +6427,8 @@ msgstr "Només es permet un punt de ruptura per plantilla de correu"
 msgid "Only workspace owners can modify integrations"
 msgstr "Només els propietaris de l'espai de treball poden modificar integracions"
 
-#: src/components/segment/form_leaf.tsx:292
-#: src/components/segment/input.tsx:715
+#: src/components/segment/form_leaf.tsx:294
+#: src/components/segment/input.tsx:725
 msgid "Open email"
 msgstr "Correu obert"
 
@@ -6847,7 +6855,7 @@ msgstr "Si us plau, seleccioneu una data"
 msgid "Please select a field"
 msgstr "Si us plau, seleccioneu un camp"
 
-#: src/components/segment/form_leaf.tsx:548
+#: src/components/segment/form_leaf.tsx:583
 msgid "Please select a goal type"
 msgstr "Si us plau, seleccioneu un tipus d'objectiu"
 
@@ -6857,7 +6865,7 @@ msgstr "Si us plau, seleccioneu un fitxer JSON"
 
 #: src/components/broadcasts/UpsertBroadcastDrawer.tsx:524
 #: src/components/contacts/ContactDetailsDrawer.tsx:1130
-#: src/components/segment/form_leaf.tsx:166
+#: src/components/segment/form_leaf.tsx:168
 msgid "Please select a list"
 msgstr "Si us plau, seleccioneu una llista"
 
@@ -6875,7 +6883,7 @@ msgid "Please select a page size"
 msgstr "Si us plau, seleccioneu una mida de pàgina"
 
 #: src/components/contacts/ContactDetailsDrawer.tsx:1104
-#: src/components/segment/form_leaf.tsx:194
+#: src/components/segment/form_leaf.tsx:196
 msgid "Please select a status"
 msgstr "Si us plau, seleccioneu un estat"
 
@@ -6898,7 +6906,7 @@ msgstr "Si us plau, seleccioneu una hora"
 msgid "Please select a timezone"
 msgstr "Si us plau, seleccioneu un fus horari"
 
-#: src/components/segment/form_leaf.tsx:567
+#: src/components/segment/form_leaf.tsx:602
 msgid "Please select aggregate"
 msgstr "Si us plau, seleccioneu agregat"
 
@@ -6906,7 +6914,7 @@ msgstr "Si us plau, seleccioneu agregat"
 msgid "Please select an email template"
 msgstr "Si us plau, seleccioneu una plantilla de correu"
 
-#: src/components/segment/form_leaf.tsx:284
+#: src/components/segment/form_leaf.tsx:286
 msgid "Please select an event type"
 msgstr "Si us plau, seleccioneu un tipus d'esdeveniment"
 
@@ -6926,7 +6934,7 @@ msgstr "Si us plau, seleccioneu una operació"
 msgid "Please select at least one event type"
 msgstr "Si us plau, seleccioneu com a mínim un tipus d'esdeveniment"
 
-#: src/components/segment/form_leaf.tsx:583
+#: src/components/segment/form_leaf.tsx:618
 msgid "Please select operator"
 msgstr "Si us plau, seleccioneu operador"
 
@@ -7632,7 +7640,7 @@ msgstr "Mode de caixa de proves"
 #: src/components/contacts/ContactUpsertDrawer.tsx:502
 #: src/components/contacts/InlineEditableField.tsx:318
 #: src/components/email_builder/panels/Preview.tsx:185
-#: src/components/email_builder/ui/BlockToolbar.tsx:239
+#: src/components/email_builder/ui/BlockToolbar.tsx:209
 #: src/components/email_builder/ui/StringPopoverInput.tsx:103
 #: src/components/file_manager/buttonSettings.tsx:312
 #: src/components/lists/ListDrawer.tsx:170
@@ -7652,12 +7660,12 @@ msgstr "Desar"
 msgid "Save Anyway"
 msgstr "Desar igualment"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:255
+#: src/components/email_builder/ui/BlockToolbar.tsx:225
 msgid "Save as new block"
 msgstr "Desar com a bloc nou"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:198
-#: src/components/email_builder/ui/BlockToolbar.tsx:235
+#: src/components/email_builder/ui/BlockToolbar.tsx:168
+#: src/components/email_builder/ui/BlockToolbar.tsx:205
 msgid "Save Block"
 msgstr "Desar bloc"
 
@@ -7674,7 +7682,7 @@ msgstr "Desar canvis"
 msgid "Save for later import"
 msgstr "Desar per importar més tard"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:253
+#: src/components/email_builder/ui/BlockToolbar.tsx:223
 msgid "Save Mode"
 msgstr "Mode de desament"
 
@@ -7752,7 +7760,7 @@ msgstr "Cerca a la web i retorna URLs rellevants"
 msgid "Searching: \"{0}\""
 msgstr "Cercant: \"{0}\""
 
-#: src/components/segment/form_leaf.tsx:620
+#: src/components/segment/form_leaf.tsx:655
 msgid "Second value must be greater than first value"
 msgstr "El segon valor ha de ser més gran que el primer valor"
 
@@ -7847,7 +7855,7 @@ msgstr "Seleccioneu un camp"
 #: src/components/automations/nodes/ListStatusBranchNode.tsx:50
 #: src/components/broadcasts/UpsertBroadcastDrawer.tsx:529
 #: src/components/contacts/ContactDetailsDrawer.tsx:1137
-#: src/components/segment/form_leaf.tsx:168
+#: src/components/segment/form_leaf.tsx:170
 msgid "Select a list"
 msgstr "Seleccioneu una llista"
 
@@ -7911,7 +7919,7 @@ msgstr "Seleccionar avatar"
 msgid "Select AWS Region"
 msgstr "Seleccionar regió AWS"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:275
+#: src/components/email_builder/ui/BlockToolbar.tsx:245
 msgid "Select Block to Update"
 msgstr "Seleccionar bloc per actualitzar"
 
@@ -7952,7 +7960,7 @@ msgstr "Seleccionar plantilla de correu"
 msgid "Select email template..."
 msgstr "Seleccionar plantilla de correu..."
 
-#: src/components/segment/form_leaf.tsx:289
+#: src/components/segment/form_leaf.tsx:291
 msgid "Select event"
 msgstr "Seleccionar esdeveniment"
 
@@ -8019,7 +8027,7 @@ msgstr "Seleccionar mida de pàgina"
 msgid "Select segments (optional)"
 msgstr "Seleccionar segments (opcional)"
 
-#: src/components/segment/form_leaf.tsx:197
+#: src/components/segment/form_leaf.tsx:199
 msgid "Select status"
 msgstr "Seleccionar estat"
 
@@ -8060,7 +8068,7 @@ msgstr "Seleccionar fus horari"
 msgid "Select timezone..."
 msgstr "Seleccionar zona horària..."
 
-#: src/components/segment/form_leaf.tsx:550
+#: src/components/segment/form_leaf.tsx:585
 msgid "Select type"
 msgstr "Seleccionar tipus"
 
@@ -8548,7 +8556,7 @@ msgid "Something went wrong"
 msgstr "Alguna cosa ha anat malament"
 
 #. placeholder {0}: node.leaf?.source
-#: src/components/segment/input.tsx:441
+#: src/components/segment/input.tsx:450
 msgid "source {0} not found"
 msgstr "origen {0} no trobat"
 
@@ -8815,6 +8823,11 @@ msgstr "Tipus de tasca:"
 #: src/components/settings/WorkspaceMembers.tsx:508
 msgid "Team"
 msgstr "Equip"
+
+#: src/components/segment/form_leaf.tsx:319
+#: src/components/segment/input.tsx:737
+msgid "template"
+msgstr ""
 
 #: src/components/broadcasts/UpsertBroadcastDrawer.tsx:824
 #: src/components/messages/MessageHistoryTable.tsx:130
@@ -9325,10 +9338,10 @@ msgstr "Aquest contenidor no té seccions. Afegiu una secció per mostrar contin
 msgid "Time"
 msgstr "Hora"
 
-#: src/components/segment/form_leaf.tsx:334
-#: src/components/segment/form_leaf.tsx:643
-#: src/components/segment/input.tsx:625
-#: src/components/segment/input.tsx:740
+#: src/components/segment/form_leaf.tsx:369
+#: src/components/segment/form_leaf.tsx:678
+#: src/components/segment/input.tsx:635
+#: src/components/segment/input.tsx:760
 msgid "timeframe"
 msgstr "període de temps"
 
@@ -9341,8 +9354,8 @@ msgstr "Cronologia"
 #~ msgid "Timeout (seconds)"
 #~ msgstr ""
 
-#: src/components/segment/form_leaf.tsx:327
-#: src/components/segment/input.tsx:735
+#: src/components/segment/form_leaf.tsx:362
+#: src/components/segment/input.tsx:755
 msgid "times"
 msgstr "vegades"
 
@@ -9569,10 +9582,10 @@ msgstr "Convertir en"
 msgid "Turn Into"
 msgstr "Convertir en"
 
-#: src/components/segment/form_leaf.tsx:278
-#: src/components/segment/form_leaf.tsx:543
-#: src/components/segment/input.tsx:595
-#: src/components/segment/input.tsx:713
+#: src/components/segment/form_leaf.tsx:280
+#: src/components/segment/form_leaf.tsx:578
+#: src/components/segment/input.tsx:605
+#: src/components/segment/input.tsx:723
 msgid "type"
 msgstr "Tipus"
 
@@ -9587,7 +9600,7 @@ msgstr "Tipus"
 msgid "type {0} is not implemented"
 msgstr "el tipus {0} no està implementat"
 
-#: src/components/segment/input.tsx:806
+#: src/components/segment/input.tsx:826
 msgid "type {rendererType} is not implemented"
 msgstr "el tipus {rendererType} no està implementat"
 
@@ -9694,8 +9707,8 @@ msgid "UNSUBSCRIBE"
 msgstr "Cancel·lar subscripció"
 
 #: src/components/contacts/BulkUpdateDrawer.tsx:595
-#: src/components/segment/form_leaf.tsx:296
-#: src/components/segment/input.tsx:720
+#: src/components/segment/form_leaf.tsx:298
+#: src/components/segment/input.tsx:730
 msgid "Unsubscribe from list"
 msgstr "Donar de baixa de la llista"
 
@@ -9724,7 +9737,7 @@ msgstr "Sense títol"
 
 #: src/components/blog_editor/toolbars/components/LinkPopover.tsx:123
 #: src/components/contacts/SegmentsFilter.tsx:122
-#: src/components/email_builder/ui/BlockToolbar.tsx:239
+#: src/components/email_builder/ui/BlockToolbar.tsx:209
 msgid "Update"
 msgstr "Actualitzar"
 
@@ -9733,7 +9746,7 @@ msgstr "Actualitzar"
 msgid "Update Contact"
 msgstr "Actualitzar contacte"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:257
+#: src/components/email_builder/ui/BlockToolbar.tsx:227
 msgid "Update existing block"
 msgstr "Actualitzar bloc existent"
 
@@ -9951,11 +9964,11 @@ msgid "Validation Error"
 msgstr "Error de validació"
 
 #: src/components/broadcasts/HeadersEditor.tsx:40
-#: src/components/segment/form_leaf.tsx:598
+#: src/components/segment/form_leaf.tsx:633
 msgid "Value"
 msgstr "Valor"
 
-#: src/components/segment/form_leaf.tsx:628
+#: src/components/segment/form_leaf.tsx:663
 msgid "Value 2"
 msgstr "Valor 2"
 
@@ -10196,12 +10209,12 @@ msgstr "Mètrica guanyadora"
 msgid "With Errors"
 msgstr "Amb errors"
 
-#: src/components/segment/form_leaf.tsx:458
+#: src/components/segment/form_leaf.tsx:493
 msgid "with filters"
 msgstr "amb filtres"
 
-#: src/components/segment/form_leaf.tsx:189
-#: src/components/segment/input.tsx:550
+#: src/components/segment/form_leaf.tsx:191
+#: src/components/segment/input.tsx:560
 #: src/components/timeline/ContactTimeline.tsx:235
 msgid "with status"
 msgstr "amb estat"

@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [27.3] - 2026-02-28
+
+- **Segments**: Added template filter to email activity conditions, allowing segments like "opened template X at least 3 times"
+
 ## [27.2] - 2026-02-21
 
 - **Contacts**: Fixed panic (502) when calling `/api/contacts.list` without the `limit` parameter (#264)

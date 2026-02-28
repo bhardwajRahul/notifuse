@@ -253,8 +253,20 @@ func (s *DemoService) createDemoWorkspace(ctx context.Context) error {
 
 	s.logger.WithField("workspace_id", workspace.ID).Info("Demo workspace created successfully")
 
-	// Create webhook subscription to generate webhook deliveries for demo data
-	// Must be created BEFORE sample data so DB triggers can fire
+	// Create SMTP integration for demo emails
+	if err := s.createDemoSMTPIntegration(authenticatedCtx, workspace.ID); err != nil {
+		s.logger.WithField("workspace_id", workspace.ID).WithField("error", err.Error()).Warn("Failed to create SMTP integration")
+		// Don't fail the entire operation if SMTP integration creation fails
+	}
+
+	// Add comprehensive sample data to the workspace
+	if err := s.addSampleData(authenticatedCtx, workspace.ID); err != nil {
+		s.logger.WithField("workspace_id", workspace.ID).WithField("error", err.Error()).Warn("Failed to add sample data to demo workspace")
+		// Don't fail the entire operation if sample data creation fails
+	}
+
+	// Create webhook subscription AFTER sample data so DB triggers don't fire
+	// for all the seed data, avoiding thousands of unnecessary webhook deliveries
 	_, err = s.webhookSubscriptionService.Create(
 		authenticatedCtx,
 		workspace.ID,
@@ -268,18 +280,6 @@ func (s *DemoService) createDemoWorkspace(ctx context.Context) error {
 		// Non-fatal - continue with demo setup
 	} else {
 		s.logger.WithField("workspace_id", workspace.ID).Info("Demo webhook subscription created")
-	}
-
-	// Create SMTP integration for demo emails
-	if err := s.createDemoSMTPIntegration(authenticatedCtx, workspace.ID); err != nil {
-		s.logger.WithField("workspace_id", workspace.ID).WithField("error", err.Error()).Warn("Failed to create SMTP integration")
-		// Don't fail the entire operation if SMTP integration creation fails
-	}
-
-	// Add comprehensive sample data to the workspace
-	if err := s.addSampleData(authenticatedCtx, workspace.ID); err != nil {
-		s.logger.WithField("workspace_id", workspace.ID).WithField("error", err.Error()).Warn("Failed to add sample data to demo workspace")
-		// Don't fail the entire operation if sample data creation fails
 	}
 
 	return nil

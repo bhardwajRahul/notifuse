@@ -331,7 +331,7 @@ msgstr "800 - 極太"
 msgid "900 - Black"
 msgstr "900 - 最太"
 
-#: src/components/segment/input.tsx:838
+#: src/components/segment/input.tsx:858
 msgid "A branch condition is required..."
 msgstr "分岐条件が必要です..."
 
@@ -362,7 +362,7 @@ msgstr ""
 msgid "A tree is required"
 msgstr "ツリーが必要です"
 
-#: src/components/segment/input.tsx:927
+#: src/components/segment/input.tsx:947
 msgid "A value is required..."
 msgstr "値が必要です..."
 
@@ -422,8 +422,8 @@ msgid "Active subscriber"
 msgstr "アクティブ購読者"
 
 #: src/components/contacts/ContactDetailsDrawer.tsx:1045
-#: src/components/segment/form_leaf.tsx:262
-#: src/components/segment/input.tsx:706
+#: src/components/segment/form_leaf.tsx:264
+#: src/components/segment/input.tsx:716
 #: src/components/segment/table_tag.tsx:30
 msgid "Activity"
 msgstr "アクティビティ"
@@ -621,8 +621,8 @@ msgstr "詳細設定"
 msgid "Affects how columns stack on mobile devices"
 msgstr "モバイルデバイスでの列の積み重ね方に影響します"
 
-#: src/components/segment/input.tsx:662
-#: src/components/segment/input.tsx:777
+#: src/components/segment/input.tsx:672
+#: src/components/segment/input.tsx:797
 msgid "after"
 msgstr "以降"
 
@@ -632,12 +632,12 @@ msgstr "以降"
 msgid "After {0} hours based on highest {1}"
 msgstr "{0}時間後、最も高い{1}に基づいて"
 
-#: src/components/segment/form_leaf.tsx:344
-#: src/components/segment/form_leaf.tsx:653
+#: src/components/segment/form_leaf.tsx:379
+#: src/components/segment/form_leaf.tsx:688
 msgid "after date"
 msgstr "日付以降"
 
-#: src/components/segment/form_leaf.tsx:569
+#: src/components/segment/form_leaf.tsx:604
 msgid "Aggregate"
 msgstr "集計"
 
@@ -690,7 +690,7 @@ msgstr "配置"
 msgid "All"
 msgstr "すべて"
 
-#: src/components/segment/input.tsx:864
+#: src/components/segment/input.tsx:884
 msgid "ALL"
 msgstr "すべて"
 
@@ -765,16 +765,16 @@ msgstr "アンカー"
 msgid "Anchor ID"
 msgstr "アンカーID"
 
-#: src/components/segment/form_leaf.tsx:609
-#: src/components/segment/input.tsx:615
+#: src/components/segment/form_leaf.tsx:644
+#: src/components/segment/input.tsx:625
 msgid "and"
 msgstr "かつ"
 
-#: src/components/segment/input.tsx:109
+#: src/components/segment/input.tsx:118
 msgid "AND | OR"
 msgstr "AND | OR"
 
-#: src/components/segment/input.tsx:865
+#: src/components/segment/input.tsx:885
 msgid "ANY"
 msgstr "いずれか"
 
@@ -782,10 +782,14 @@ msgstr "いずれか"
 msgid "Any field change triggers automation"
 msgstr "フィールドの変更でオートメーションをトリガー"
 
-#: src/components/segment/form_leaf.tsx:341
-#: src/components/segment/form_leaf.tsx:650
-#: src/components/segment/input.tsx:628
-#: src/components/segment/input.tsx:743
+#: src/components/segment/form_leaf.tsx:328
+msgid "Any template"
+msgstr ""
+
+#: src/components/segment/form_leaf.tsx:376
+#: src/components/segment/form_leaf.tsx:685
+#: src/components/segment/input.tsx:638
+#: src/components/segment/input.tsx:763
 msgid "anytime"
 msgstr "いつでも"
 
@@ -882,7 +886,7 @@ msgid "Are you sure you want to delete the post"
 msgstr "投稿を削除してもよろしいですか"
 
 #: src/components/email_builder/panels/TreePanel.tsx:214
-#: src/components/email_builder/ui/BlockToolbar.tsx:215
+#: src/components/email_builder/ui/BlockToolbar.tsx:185
 msgid "Are you sure you want to delete this block?"
 msgstr "このブロックを削除してもよろしいですか?"
 
@@ -955,13 +959,13 @@ msgstr "配列インデックス: {segment}"
 msgid "Ask me to help write your blog..."
 msgstr "ブログの執筆をお手伝いします..."
 
-#: src/components/segment/form_leaf.tsx:312
-#: src/components/segment/input.tsx:728
+#: src/components/segment/form_leaf.tsx:347
+#: src/components/segment/input.tsx:748
 msgid "at least"
 msgstr "少なくとも"
 
-#: src/components/segment/form_leaf.tsx:313
-#: src/components/segment/input.tsx:729
+#: src/components/segment/form_leaf.tsx:348
+#: src/components/segment/input.tsx:749
 msgid "at most"
 msgstr "最大"
 
@@ -1176,13 +1180,13 @@ msgstr "BCC"
 msgid "BCC Recipients"
 msgstr "BCC宛先"
 
-#: src/components/segment/input.tsx:654
-#: src/components/segment/input.tsx:769
+#: src/components/segment/input.tsx:664
+#: src/components/segment/input.tsx:789
 msgid "before"
 msgstr "以前"
 
-#: src/components/segment/form_leaf.tsx:343
-#: src/components/segment/form_leaf.tsx:652
+#: src/components/segment/form_leaf.tsx:378
+#: src/components/segment/form_leaf.tsx:687
 msgid "before date"
 msgstr "日付以前"
 
@@ -1198,8 +1202,8 @@ msgstr "以下のセグメントの少なくとも1つに属する"
 msgid "Best practices:"
 msgstr "ベストプラクティス:"
 
-#: src/components/segment/input.tsx:642
-#: src/components/segment/input.tsx:757
+#: src/components/segment/input.tsx:652
+#: src/components/segment/input.tsx:777
 msgid "between"
 msgstr "の間"
 
@@ -1208,16 +1212,16 @@ msgid "Blacklisted"
 msgstr "ブラックリスト"
 
 #. placeholder {0}: selectedBlock?.name
-#: src/components/email_builder/ui/BlockToolbar.tsx:119
+#: src/components/email_builder/ui/BlockToolbar.tsx:117
 msgid "Block \"{0}\" updated"
 msgstr "ブロック\"{0}\"を更新しました"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:264
+#: src/components/email_builder/ui/BlockToolbar.tsx:234
 msgid "Block Name"
 msgstr "ブロック名"
 
 #. placeholder {0}: saveBlockName.trim()
-#: src/components/email_builder/ui/BlockToolbar.tsx:114
+#: src/components/email_builder/ui/BlockToolbar.tsx:112
 msgid "Block saved as \"{0}\""
 msgstr "ブロックを\"{0}\"として保存しました"
 
@@ -1225,7 +1229,7 @@ msgstr "ブロックを\"{0}\"として保存しました"
 msgid "Block Settings Panel"
 msgstr "ブロック設定パネル"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:248
+#: src/components/email_builder/ui/BlockToolbar.tsx:218
 msgid "Block type:"
 msgstr "ブロックタイプ:"
 
@@ -1349,8 +1353,8 @@ msgstr "バウンスカテゴリ"
 msgid "Bounce Diagnostic:"
 msgstr "バウンス診断:"
 
-#: src/components/segment/form_leaf.tsx:294
-#: src/components/segment/input.tsx:717
+#: src/components/segment/form_leaf.tsx:296
+#: src/components/segment/input.tsx:727
 msgid "Bounce email"
 msgstr "バウンスメール"
 
@@ -1545,7 +1549,7 @@ msgstr "ボタンサイズ"
 #: src/components/contacts/InlineEditableField.tsx:299
 #: src/components/email_builder/blocks/MjStyleBlock.tsx:155
 #: src/components/email_builder/panels/Preview.tsx:182
-#: src/components/email_builder/ui/BlockToolbar.tsx:240
+#: src/components/email_builder/ui/BlockToolbar.tsx:210
 #: src/components/email_builder/ui/CodeDrawerInput.tsx:139
 #: src/components/email_builder/ui/CodeDrawerInput.tsx:179
 #: src/components/email_builder/ui/ImportFontInput.tsx:173
@@ -1560,7 +1564,7 @@ msgstr "ボタンサイズ"
 #: src/components/file_manager/fileManager.tsx:1130
 #: src/components/segment/button_upsert.tsx:347
 #: src/components/segment/input_dimension_filters.tsx:162
-#: src/components/segment/input.tsx:376
+#: src/components/segment/input.tsx:385
 #: src/components/settings/BlogSettings.tsx:181
 #: src/components/settings/CustomFieldsConfiguration.tsx:273
 #: src/components/settings/EditPermissionsModal.tsx:121
@@ -1708,7 +1712,7 @@ msgstr "チェック"
 msgid "Check for Updates"
 msgstr "更新を確認"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:279
+#: src/components/email_builder/ui/BlockToolbar.tsx:249
 msgid "Choose a saved block to update"
 msgstr "更新する保存済みブロックを選択"
 
@@ -1740,8 +1744,8 @@ msgstr "すべてクリア"
 msgid "Clear field"
 msgstr "フィールドをクリア"
 
-#: src/components/segment/form_leaf.tsx:293
-#: src/components/segment/input.tsx:716
+#: src/components/segment/form_leaf.tsx:295
+#: src/components/segment/input.tsx:726
 msgid "Click email"
 msgstr "メールクリック"
 
@@ -1789,7 +1793,7 @@ msgstr "クリック"
 msgid "Clone"
 msgstr "複製"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:182
+#: src/components/email_builder/ui/BlockToolbar.tsx:152
 msgid "Clone Block"
 msgstr "ブロックを複製"
 
@@ -1853,7 +1857,7 @@ msgstr "列幅 (例: '50%'、'300px'、'auto')"
 msgid "Common ports: 587 (TLS), 465 (SSL), 25 (unencrypted)"
 msgstr "一般的なポート: 587 (TLS)、465 (SSL)、25 (暗号化なし)"
 
-#: src/components/segment/form_leaf.tsx:585
+#: src/components/segment/form_leaf.tsx:620
 msgid "Comparison"
 msgstr "比較"
 
@@ -1861,8 +1865,8 @@ msgstr "比較"
 msgid "Compilation Results"
 msgstr "コンパイル結果"
 
-#: src/components/segment/form_leaf.tsx:295
-#: src/components/segment/input.tsx:718
+#: src/components/segment/form_leaf.tsx:297
+#: src/components/segment/input.tsx:728
 msgid "Complain email"
 msgstr "苦情メール"
 
@@ -1917,7 +1921,7 @@ msgstr "完了"
 msgid "condition"
 msgstr "条件"
 
-#: src/components/segment/input.tsx:917
+#: src/components/segment/input.tsx:937
 msgid "Condition"
 msgstr "条件"
 
@@ -1988,10 +1992,10 @@ msgstr "{0}を設定中"
 #: src/components/filters/Filter.tsx:184
 #: src/components/filters/Filter.tsx:203
 #: src/components/segment/button_upsert.tsx:356
-#: src/components/segment/form_leaf.tsx:99
-#: src/components/segment/form_leaf.tsx:216
-#: src/components/segment/form_leaf.tsx:486
-#: src/components/segment/form_leaf.tsx:759
+#: src/components/segment/form_leaf.tsx:101
+#: src/components/segment/form_leaf.tsx:218
+#: src/components/segment/form_leaf.tsx:521
+#: src/components/segment/form_leaf.tsx:794
 #: src/components/segment/input_dimension_filters.tsx:160
 msgid "Confirm"
 msgstr "確認"
@@ -2068,8 +2072,8 @@ msgstr "コンタクトのステータスが保留中、購読解除、バウン
 msgid "Contact is not subscribed to this list"
 msgstr "コンタクトはこのリストを購読していません"
 
-#: src/components/segment/form_leaf.tsx:71
-#: src/components/segment/input.tsx:700
+#: src/components/segment/form_leaf.tsx:73
+#: src/components/segment/input.tsx:710
 #: src/components/segment/table_tag.tsx:20
 msgid "Contact property"
 msgstr "コンタクトプロパティ"
@@ -2605,10 +2609,10 @@ msgstr "破線"
 msgid "Date"
 msgstr "日付"
 
-#: src/components/segment/form_leaf.tsx:381
-#: src/components/segment/form_leaf.tsx:688
-#: src/components/segment/input.tsx:637
-#: src/components/segment/input.tsx:752
+#: src/components/segment/form_leaf.tsx:416
+#: src/components/segment/form_leaf.tsx:723
+#: src/components/segment/input.tsx:647
+#: src/components/segment/input.tsx:772
 msgid "days"
 msgstr "日"
 
@@ -2685,7 +2689,7 @@ msgstr "遅延"
 #: src/components/file_manager/fileManager.tsx:773
 #: src/components/file_manager/fileManager.tsx:778
 #: src/components/file_manager/fileManager.tsx:951
-#: src/components/segment/input.tsx:374
+#: src/components/segment/input.tsx:383
 #: src/components/settings/Integrations.tsx:312
 #: src/components/settings/Integrations.tsx:1183
 #: src/components/settings/Integrations.tsx:1342
@@ -2718,7 +2722,7 @@ msgstr "オートメーションを削除しますか？"
 msgid "Delete block"
 msgstr "ブロックを削除"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:214
+#: src/components/email_builder/ui/BlockToolbar.tsx:184
 msgid "Delete Block"
 msgstr "ブロックを削除"
 
@@ -2941,11 +2945,11 @@ msgstr "DNS レコードが必要:"
 msgid "DNS verification prevents domain squatting"
 msgstr "DNS検証によりドメインスクワッティングを防止"
 
-#: src/components/segment/input.tsx:372
+#: src/components/segment/input.tsx:381
 msgid "Do you really want to remove this branch?"
 msgstr "この分岐を削除してもよろしいですか？"
 
-#: src/components/segment/input.tsx:372
+#: src/components/segment/input.tsx:381
 msgid "Do you really want to remove this condition?"
 msgstr "この条件を削除してもよろしいですか？"
 
@@ -3471,7 +3475,7 @@ msgstr "登録済み"
 msgid "Enter {0}"
 msgstr "{0}を入力"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:266
+#: src/components/email_builder/ui/BlockToolbar.tsx:236
 msgid "Enter a name for this block"
 msgstr "このブロックの名前を入力"
 
@@ -3735,8 +3739,8 @@ msgstr "イベント"
 msgid "Every time"
 msgstr "毎回"
 
-#: src/components/segment/form_leaf.tsx:314
-#: src/components/segment/input.tsx:730
+#: src/components/segment/form_leaf.tsx:349
+#: src/components/segment/input.tsx:750
 msgid "exactly"
 msgstr "正確に"
 
@@ -3749,8 +3753,12 @@ msgid "Exclude Unsubscribed"
 msgstr "配信停止者を除外"
 
 #: src/components/broadcasts/UpsertBroadcastDrawer.tsx:599
-msgid "Exclude unsubscribed recipients"
-msgstr "配信停止した受信者を除外"
+#~ msgid "Exclude unsubscribed recipients"
+#~ msgstr "配信停止した受信者を除外"
+
+#: src/components/broadcasts/UpsertBroadcastDrawer.tsx:599
+msgid "Exclude unsubscribed, bounced & complained recipients"
+msgstr ""
 
 #: src/components/timeline/ContactTimeline.tsx:737
 msgid "exited"
@@ -4619,8 +4627,8 @@ msgstr "有効時はグローバルフィードのURLが必須です"
 msgid "Go to Sign In"
 msgstr "サインインへ"
 
-#: src/components/segment/form_leaf.tsx:527
-#: src/components/segment/input.tsx:590
+#: src/components/segment/form_leaf.tsx:562
+#: src/components/segment/input.tsx:600
 msgid "Goal"
 msgstr "ゴール"
 
@@ -4648,8 +4656,8 @@ msgstr "グループ（ここにカラムをドラッグ）"
 msgid "Group Attributes"
 msgstr "グループ属性"
 
-#: src/components/segment/form_leaf.tsx:305
-#: src/components/segment/input.tsx:726
+#: src/components/segment/form_leaf.tsx:340
+#: src/components/segment/input.tsx:746
 msgid "happened"
 msgstr "発生"
 
@@ -5012,8 +5020,8 @@ msgstr "ファイルをインポート中..."
 msgid "in {0}"
 msgstr "{0}で"
 
-#: src/components/segment/form_leaf.tsx:342
-#: src/components/segment/form_leaf.tsx:651
+#: src/components/segment/form_leaf.tsx:377
+#: src/components/segment/form_leaf.tsx:686
 msgid "in date range"
 msgstr "日付範囲内"
 
@@ -5021,10 +5029,10 @@ msgstr "日付範囲内"
 msgid "in recipients timezone"
 msgstr "受信者のタイムゾーンで"
 
-#: src/components/segment/form_leaf.tsx:345
-#: src/components/segment/form_leaf.tsx:654
-#: src/components/segment/input.tsx:633
-#: src/components/segment/input.tsx:748
+#: src/components/segment/form_leaf.tsx:380
+#: src/components/segment/form_leaf.tsx:689
+#: src/components/segment/input.tsx:643
+#: src/components/segment/input.tsx:768
 msgid "in the last"
 msgstr "過去"
 
@@ -5229,18 +5237,18 @@ msgid "Invite Member"
 msgstr "メンバーを招待"
 
 #: src/components/file_manager/context.tsx:201
-#: src/components/segment/form_leaf.tsx:578
-#: src/components/segment/input.tsx:606
+#: src/components/segment/form_leaf.tsx:613
+#: src/components/segment/input.tsx:616
 msgid "is"
 msgstr "である"
 
-#: src/components/segment/form_leaf.tsx:157
-#: src/components/segment/input.tsx:544
+#: src/components/segment/form_leaf.tsx:159
+#: src/components/segment/input.tsx:554
 msgid "is in"
 msgstr "に含まれる"
 
-#: src/components/segment/form_leaf.tsx:158
-#: src/components/segment/input.tsx:544
+#: src/components/segment/form_leaf.tsx:160
+#: src/components/segment/input.tsx:554
 msgid "is not in"
 msgstr "に含まれない"
 
@@ -5497,8 +5505,8 @@ msgstr "リストID: {0}"
 msgid "List Status"
 msgstr "リストステータス"
 
-#: src/components/segment/form_leaf.tsx:142
-#: src/components/segment/input.tsx:542
+#: src/components/segment/form_leaf.tsx:144
+#: src/components/segment/input.tsx:552
 #: src/components/segment/table_tag.tsx:25
 msgid "List subscription"
 msgstr "リスト購読"
@@ -5937,8 +5945,8 @@ msgstr "新規フォルダ"
 msgid "New magic code sent to your email"
 msgstr "新しいマジックコードをメールに送信しました"
 
-#: src/components/segment/form_leaf.tsx:291
-#: src/components/segment/input.tsx:722
+#: src/components/segment/form_leaf.tsx:293
+#: src/components/segment/input.tsx:732
 msgid "New message (email...)"
 msgstr "新規メッセージ（メール...）"
 
@@ -6384,7 +6392,7 @@ msgstr "OAuth2プレイグラウンドまたは独自のOAuthフローで取得�
 msgid "Occurred:"
 msgstr "発生日時:"
 
-#: src/components/segment/input.tsx:867
+#: src/components/segment/input.tsx:887
 msgid "of the following conditions match:"
 msgstr "の以下の条件に一致:"
 
@@ -6419,8 +6427,8 @@ msgstr "メールテンプレートごとに1つのブレークポイントの�
 msgid "Only workspace owners can modify integrations"
 msgstr "ワークスペースオーナーのみが連携を変更できます"
 
-#: src/components/segment/form_leaf.tsx:292
-#: src/components/segment/input.tsx:715
+#: src/components/segment/form_leaf.tsx:294
+#: src/components/segment/input.tsx:725
 msgid "Open email"
 msgstr "メール開封"
 
@@ -6847,7 +6855,7 @@ msgstr "日付を選択してください"
 msgid "Please select a field"
 msgstr "フィールドを選択してください"
 
-#: src/components/segment/form_leaf.tsx:548
+#: src/components/segment/form_leaf.tsx:583
 msgid "Please select a goal type"
 msgstr "ゴールタイプを選択してください"
 
@@ -6857,7 +6865,7 @@ msgstr "JSONファイルを選択してください"
 
 #: src/components/broadcasts/UpsertBroadcastDrawer.tsx:524
 #: src/components/contacts/ContactDetailsDrawer.tsx:1130
-#: src/components/segment/form_leaf.tsx:166
+#: src/components/segment/form_leaf.tsx:168
 msgid "Please select a list"
 msgstr "リストを選択してください"
 
@@ -6875,7 +6883,7 @@ msgid "Please select a page size"
 msgstr "ページサイズを選択してください"
 
 #: src/components/contacts/ContactDetailsDrawer.tsx:1104
-#: src/components/segment/form_leaf.tsx:194
+#: src/components/segment/form_leaf.tsx:196
 msgid "Please select a status"
 msgstr "ステータスを選択してください"
 
@@ -6898,7 +6906,7 @@ msgstr "時間を選択してください"
 msgid "Please select a timezone"
 msgstr "タイムゾーンを選択してください"
 
-#: src/components/segment/form_leaf.tsx:567
+#: src/components/segment/form_leaf.tsx:602
 msgid "Please select aggregate"
 msgstr "集計を選択してください"
 
@@ -6906,7 +6914,7 @@ msgstr "集計を選択してください"
 msgid "Please select an email template"
 msgstr "メールテンプレートを選択してください"
 
-#: src/components/segment/form_leaf.tsx:284
+#: src/components/segment/form_leaf.tsx:286
 msgid "Please select an event type"
 msgstr "イベントタイプを選択してください"
 
@@ -6926,7 +6934,7 @@ msgstr "操作を選択してください"
 msgid "Please select at least one event type"
 msgstr "イベントタイプを1つ以上選択してください"
 
-#: src/components/segment/form_leaf.tsx:583
+#: src/components/segment/form_leaf.tsx:618
 msgid "Please select operator"
 msgstr "演算子を選択してください"
 
@@ -7632,7 +7640,7 @@ msgstr "サンドボックスモード"
 #: src/components/contacts/ContactUpsertDrawer.tsx:502
 #: src/components/contacts/InlineEditableField.tsx:318
 #: src/components/email_builder/panels/Preview.tsx:185
-#: src/components/email_builder/ui/BlockToolbar.tsx:239
+#: src/components/email_builder/ui/BlockToolbar.tsx:209
 #: src/components/email_builder/ui/StringPopoverInput.tsx:103
 #: src/components/file_manager/buttonSettings.tsx:312
 #: src/components/lists/ListDrawer.tsx:170
@@ -7652,12 +7660,12 @@ msgstr "保存"
 msgid "Save Anyway"
 msgstr "それでも保存"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:255
+#: src/components/email_builder/ui/BlockToolbar.tsx:225
 msgid "Save as new block"
 msgstr "新規ブロックとして保存"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:198
-#: src/components/email_builder/ui/BlockToolbar.tsx:235
+#: src/components/email_builder/ui/BlockToolbar.tsx:168
+#: src/components/email_builder/ui/BlockToolbar.tsx:205
 msgid "Save Block"
 msgstr "ブロックを保存"
 
@@ -7674,7 +7682,7 @@ msgstr "変更を保存"
 msgid "Save for later import"
 msgstr "後でインポートするために保存"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:253
+#: src/components/email_builder/ui/BlockToolbar.tsx:223
 msgid "Save Mode"
 msgstr "保存モード"
 
@@ -7752,7 +7760,7 @@ msgstr "ウェブを検索して関連URLを返します"
 msgid "Searching: \"{0}\""
 msgstr "検索中: 「{0}」"
 
-#: src/components/segment/form_leaf.tsx:620
+#: src/components/segment/form_leaf.tsx:655
 msgid "Second value must be greater than first value"
 msgstr "2番目の値は1番目の値より大きくする必要があります"
 
@@ -7847,7 +7855,7 @@ msgstr "フィールドを選択"
 #: src/components/automations/nodes/ListStatusBranchNode.tsx:50
 #: src/components/broadcasts/UpsertBroadcastDrawer.tsx:529
 #: src/components/contacts/ContactDetailsDrawer.tsx:1137
-#: src/components/segment/form_leaf.tsx:168
+#: src/components/segment/form_leaf.tsx:170
 msgid "Select a list"
 msgstr "リストを選択"
 
@@ -7911,7 +7919,7 @@ msgstr "アバターを選択"
 msgid "Select AWS Region"
 msgstr "AWSリージョンを選択"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:275
+#: src/components/email_builder/ui/BlockToolbar.tsx:245
 msgid "Select Block to Update"
 msgstr "更新するブロックを選択"
 
@@ -7952,7 +7960,7 @@ msgstr "メールテンプレートを選択"
 msgid "Select email template..."
 msgstr "メールテンプレートを選択..."
 
-#: src/components/segment/form_leaf.tsx:289
+#: src/components/segment/form_leaf.tsx:291
 msgid "Select event"
 msgstr "イベントを選択"
 
@@ -8019,7 +8027,7 @@ msgstr "ページサイズを選択"
 msgid "Select segments (optional)"
 msgstr "セグメントを選択（任意）"
 
-#: src/components/segment/form_leaf.tsx:197
+#: src/components/segment/form_leaf.tsx:199
 msgid "Select status"
 msgstr "ステータスを選択"
 
@@ -8060,7 +8068,7 @@ msgstr "タイムゾーンを選択"
 msgid "Select timezone..."
 msgstr "タイムゾーンを選択..."
 
-#: src/components/segment/form_leaf.tsx:550
+#: src/components/segment/form_leaf.tsx:585
 msgid "Select type"
 msgstr "タイプを選択"
 
@@ -8548,7 +8556,7 @@ msgid "Something went wrong"
 msgstr "エラーが発生しました"
 
 #. placeholder {0}: node.leaf?.source
-#: src/components/segment/input.tsx:441
+#: src/components/segment/input.tsx:450
 msgid "source {0} not found"
 msgstr "ソース {0} が見つかりません"
 
@@ -8815,6 +8823,11 @@ msgstr "タスクタイプ:"
 #: src/components/settings/WorkspaceMembers.tsx:508
 msgid "Team"
 msgstr "チーム"
+
+#: src/components/segment/form_leaf.tsx:319
+#: src/components/segment/input.tsx:737
+msgid "template"
+msgstr ""
 
 #: src/components/broadcasts/UpsertBroadcastDrawer.tsx:824
 #: src/components/messages/MessageHistoryTable.tsx:130
@@ -9325,10 +9338,10 @@ msgstr "このラッパーにはセクションがありません。コンテン
 msgid "Time"
 msgstr "時間"
 
-#: src/components/segment/form_leaf.tsx:334
-#: src/components/segment/form_leaf.tsx:643
-#: src/components/segment/input.tsx:625
-#: src/components/segment/input.tsx:740
+#: src/components/segment/form_leaf.tsx:369
+#: src/components/segment/form_leaf.tsx:678
+#: src/components/segment/input.tsx:635
+#: src/components/segment/input.tsx:760
 msgid "timeframe"
 msgstr "期間"
 
@@ -9341,8 +9354,8 @@ msgstr "タイムライン"
 #~ msgid "Timeout (seconds)"
 #~ msgstr ""
 
-#: src/components/segment/form_leaf.tsx:327
-#: src/components/segment/input.tsx:735
+#: src/components/segment/form_leaf.tsx:362
+#: src/components/segment/input.tsx:755
 msgid "times"
 msgstr "回"
 
@@ -9569,10 +9582,10 @@ msgstr "変換"
 msgid "Turn Into"
 msgstr "変換"
 
-#: src/components/segment/form_leaf.tsx:278
-#: src/components/segment/form_leaf.tsx:543
-#: src/components/segment/input.tsx:595
-#: src/components/segment/input.tsx:713
+#: src/components/segment/form_leaf.tsx:280
+#: src/components/segment/form_leaf.tsx:578
+#: src/components/segment/input.tsx:605
+#: src/components/segment/input.tsx:723
 msgid "type"
 msgstr "タイプ"
 
@@ -9587,7 +9600,7 @@ msgstr "タイプ"
 msgid "type {0} is not implemented"
 msgstr "タイプ {0} は実装されていません"
 
-#: src/components/segment/input.tsx:806
+#: src/components/segment/input.tsx:826
 msgid "type {rendererType} is not implemented"
 msgstr "タイプ {rendererType} は実装されていません"
 
@@ -9694,8 +9707,8 @@ msgid "UNSUBSCRIBE"
 msgstr "購読解除"
 
 #: src/components/contacts/BulkUpdateDrawer.tsx:595
-#: src/components/segment/form_leaf.tsx:296
-#: src/components/segment/input.tsx:720
+#: src/components/segment/form_leaf.tsx:298
+#: src/components/segment/input.tsx:730
 msgid "Unsubscribe from list"
 msgstr "リストから購読解除"
 
@@ -9724,7 +9737,7 @@ msgstr "無題"
 
 #: src/components/blog_editor/toolbars/components/LinkPopover.tsx:123
 #: src/components/contacts/SegmentsFilter.tsx:122
-#: src/components/email_builder/ui/BlockToolbar.tsx:239
+#: src/components/email_builder/ui/BlockToolbar.tsx:209
 msgid "Update"
 msgstr "更新"
 
@@ -9733,7 +9746,7 @@ msgstr "更新"
 msgid "Update Contact"
 msgstr "コンタクトを更新"
 
-#: src/components/email_builder/ui/BlockToolbar.tsx:257
+#: src/components/email_builder/ui/BlockToolbar.tsx:227
 msgid "Update existing block"
 msgstr "既存ブロックを更新"
 
@@ -9951,11 +9964,11 @@ msgid "Validation Error"
 msgstr "検証エラー"
 
 #: src/components/broadcasts/HeadersEditor.tsx:40
-#: src/components/segment/form_leaf.tsx:598
+#: src/components/segment/form_leaf.tsx:633
 msgid "Value"
 msgstr "値"
 
-#: src/components/segment/form_leaf.tsx:628
+#: src/components/segment/form_leaf.tsx:663
 msgid "Value 2"
 msgstr "値2"
 
@@ -10196,12 +10209,12 @@ msgstr "勝利指標"
 msgid "With Errors"
 msgstr "エラーあり"
 
-#: src/components/segment/form_leaf.tsx:458
+#: src/components/segment/form_leaf.tsx:493
 msgid "with filters"
 msgstr "フィルター付き"
 
-#: src/components/segment/form_leaf.tsx:189
-#: src/components/segment/input.tsx:550
+#: src/components/segment/form_leaf.tsx:191
+#: src/components/segment/input.tsx:560
 #: src/components/timeline/ContactTimeline.tsx:235
 msgid "with status"
 msgstr "ステータス付き"
