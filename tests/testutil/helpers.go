@@ -743,9 +743,9 @@ func WaitForSegmentBuilt(t *testing.T, client *APIClient, workspaceID, segmentID
 	pollInterval := 500 * time.Millisecond
 
 	for time.Now().Before(deadline) {
-		// Execute tasks on each poll to ensure pending tasks are processed
-		// This is important when tests run sequentially and tasks queue up
-		execResp, err := client.Post("/api/tasks.execute", map[string]interface{}{"limit": 10})
+		// Execute pending tasks on each poll to ensure build tasks are processed
+		// Uses GET /api/cron which triggers ExecutePendingTasks
+		execResp, err := client.Get("/api/cron?limit=10")
 		if err == nil {
 			execResp.Body.Close()
 		}

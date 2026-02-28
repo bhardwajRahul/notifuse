@@ -1035,7 +1035,17 @@ func TestContactTimelineCondition_Validate(t *testing.T) {
 				TemplateID:    stringPtr("template-123"),
 			},
 			wantErr: true,
-			errMsg:  "template_id can only be used with email event kinds",
+			errMsg:  "template_id can only be used with email event kinds (open_email, click_email, bounce_email, complain_email, unsubscribe_email) or insert_message_history",
+		},
+		{
+			name: "valid with template_id and insert_message_history kind",
+			cond: ContactTimelineCondition{
+				Kind:          "insert_message_history",
+				CountOperator: "at_least",
+				CountValue:    1,
+				TemplateID:    stringPtr("template-456"),
+			},
+			wantErr: false,
 		},
 		{
 			name: "nil template_id with non-email kind is valid",

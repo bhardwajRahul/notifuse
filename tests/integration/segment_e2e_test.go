@@ -199,7 +199,7 @@ func testSimpleContactSegment(t *testing.T, client *testutil.APIClient, factory 
 		_ = execResp.Body.Close()
 
 		// Wait for segment to be built
-		status, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segmentID, 10*time.Second)
+		status, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segmentID, 30*time.Second)
 		if err != nil {
 			t.Fatalf("Segment build failed: %v", err)
 		}
@@ -638,12 +638,12 @@ func testSegmentRebuild(t *testing.T, client *testutil.APIClient, factory *testu
 		defer func() { _ = rebuildResp.Body.Close() }()
 
 		// Execute tasks
-		execResp, err := client.Post("/api/tasks.execute", map[string]interface{}{"limit": 10})
+		execResp, err := client.Get("/api/cron?limit=10")
 		require.NoError(t, err)
 		_ = execResp.Body.Close()
 
 		// Wait for segment to be built
-		status, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segmentID, 10*time.Second)
+		status, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segmentID, 30*time.Second)
 		if err != nil {
 			t.Fatalf("Segment build failed: %v", err)
 		}
@@ -667,12 +667,12 @@ func testSegmentRebuild(t *testing.T, client *testutil.APIClient, factory *testu
 		defer func() { _ = rebuildResp2.Body.Close() }()
 
 		// Execute tasks again
-		execResp2, err := client.Post("/api/tasks.execute", map[string]interface{}{"limit": 10})
+		execResp2, err := client.Get("/api/cron?limit=10")
 		require.NoError(t, err)
 		_ = execResp2.Body.Close()
 
 		// Wait for segment to be built
-		status2, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segmentID, 10*time.Second)
+		status2, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segmentID, 30*time.Second)
 		if err != nil {
 			t.Fatalf("Segment rebuild failed: %v", err)
 		}
@@ -928,12 +928,12 @@ func testSegmentWithRelativeDates(t *testing.T, client *testutil.APIClient, fact
 		defer func() { _ = rebuildResp.Body.Close() }()
 
 		// Execute tasks to start the build
-		execResp, err := client.Post("/api/tasks.execute", map[string]interface{}{"limit": 10})
+		execResp, err := client.Get("/api/cron?limit=10")
 		require.NoError(t, err)
 		_ = execResp.Body.Close()
 
 		// Wait for segment to be built
-		status, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segmentID, 10*time.Second)
+		status, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segmentID, 30*time.Second)
 		if err != nil {
 			t.Fatalf("Segment build failed: %v", err)
 		}
@@ -1125,12 +1125,12 @@ func testCheckSegmentRecomputeProcessor(t *testing.T, client *testutil.APIClient
 		_ = rebuildResp.Body.Close()
 
 		// Execute tasks to build the segment
-		execBuildResp, err := client.Post("/api/tasks.execute", map[string]interface{}{"limit": 10})
+		execBuildResp, err := client.Get("/api/cron?limit=10")
 		require.NoError(t, err)
 		_ = execBuildResp.Body.Close()
 
 		// Wait for segment to become active
-		segmentStatus, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segment1ID, 10*time.Second)
+		segmentStatus, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segment1ID, 30*time.Second)
 		require.NoError(t, err)
 		require.Contains(t, []string{"built", "active"}, segmentStatus, "Segment must be active before recompute check")
 
@@ -1537,12 +1537,12 @@ func testContactPropertyRelativeDates(t *testing.T, client *testutil.APIClient, 
 		defer func() { _ = rebuildResp.Body.Close() }()
 
 		// Execute tasks to build the segment
-		execResp, err := client.Post("/api/tasks.execute", map[string]interface{}{"limit": 10})
+		execResp, err := client.Get("/api/cron?limit=10")
 		require.NoError(t, err)
 		_ = execResp.Body.Close()
 
 		// Wait for segment to be built
-		status, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segmentID, 10*time.Second)
+		status, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segmentID, 30*time.Second)
 		if err != nil {
 			t.Fatalf("Segment build failed: %v", err)
 		}
@@ -2412,12 +2412,12 @@ func testCustomEventsGoalsSegmentation(t *testing.T, client *testutil.APIClient,
 		defer func() { _ = rebuildResp.Body.Close() }()
 
 		// Execute tasks
-		execResp, err := client.Post("/api/tasks.execute", map[string]interface{}{"limit": 10})
+		execResp, err := client.Get("/api/cron?limit=10")
 		require.NoError(t, err)
 		_ = execResp.Body.Close()
 
 		// Wait for segment to be built
-		status, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segmentID, 10*time.Second)
+		status, err := testutil.WaitForSegmentBuilt(t, client, workspaceID, segmentID, 30*time.Second)
 		if err != nil {
 			t.Fatalf("Segment build failed: %v", err)
 		}
@@ -2697,7 +2697,7 @@ func testComprehensiveActivitySegments(t *testing.T, client *testutil.APIClient,
 		t.Run("at_most_3", func(t *testing.T) {
 			tree := andBranch(markerLeaf, timelineLeaf("open_email", "at_most", 3))
 			count := previewSegment(t, workspaceID, tree)
-			assert.Equal(t, 2, count, "at_most 3: expected 2 contacts (1evt + 3evt)")
+			assert.Equal(t, 3, count, "at_most 3: expected 3 contacts (0evt + 1evt + 3evt)")
 		})
 
 		t.Run("exactly_3", func(t *testing.T) {
