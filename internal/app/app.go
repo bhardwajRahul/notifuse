@@ -953,6 +953,7 @@ func (a *App) InitServices() error {
 		a.contactRepo,
 		a.workspaceRepo,
 		a.contactListRepo,
+		a.listRepo,
 		a.templateRepo,
 		a.emailQueueRepo,
 		a.messageHistoryRepo,

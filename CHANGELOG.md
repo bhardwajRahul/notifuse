@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 - **Segments**: Added template filter to email activity conditions, allowing segments like "opened template X at least 3 times"
 - **SMTP**: Fixed TLS override option not working for system emails (magic codes, invitations, alerts). The "Use TLS" toggle was ignored, causing certificate errors on local SMTP relays (#275)
+- **Automations**: Fixed automation emails rendering `{{ notification_center_url }}` and `{{ unsubscribe_url }}` as empty strings by using the shared template data builder (#279)
+- **Segments**: Fixed race condition where background task execution could pick up unrelated tasks, causing flaky segment recompute behavior
 
 ## [27.2] - 2026-02-21
 
