@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - **SMTP**: Fixed TLS override option not working for system emails (magic codes, invitations, alerts). The "Use TLS" toggle was ignored, causing certificate errors on local SMTP relays (#275)
 - **Automations**: Fixed automation emails rendering `{{ notification_center_url }}` and `{{ unsubscribe_url }}` as empty strings by using the shared template data builder (#279)
 - **Segments**: Fixed race condition where background task execution could pick up unrelated tasks, causing flaky segment recompute behavior
+- **Security**: Upgraded rollup to 4.59.0 and minimatch to 10.2.4
 
 ## [27.2] - 2026-02-21
 
