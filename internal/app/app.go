@@ -380,6 +380,7 @@ func (a *App) InitMailer() error {
 			FromEmail:    a.config.SMTP.FromEmail,
 			FromName:     a.config.SMTP.FromName,
 			APIEndpoint:  a.config.APIEndpoint,
+			UseTLS:       a.config.SMTP.UseTLS,
 		}
 
 		a.mailer = mailer.NewSMTPMailer(mailerConfig)

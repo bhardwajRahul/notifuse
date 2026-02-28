@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [27.3] - 2026-02-28
 
 - **Segments**: Added template filter to email activity conditions, allowing segments like "opened template X at least 3 times"
+- **SMTP**: Fixed TLS override option not working for system emails (magic codes, invitations, alerts). The "Use TLS" toggle was ignored, causing certificate errors on local SMTP relays (#275)
 
 ## [27.2] - 2026-02-21
 

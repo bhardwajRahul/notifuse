@@ -30,6 +30,7 @@ type Config struct {
 	FromEmail    string
 	FromName     string
 	APIEndpoint  string
+	UseTLS       bool
 }
 
 // SMTPMailer implements the Mailer interface using SMTP
@@ -273,10 +274,16 @@ func (m *SMTPMailer) createSMTPClient() (*mail.Client, error) {
 		return nil, nil
 	}
 
+	// Determine TLS policy based on config
+	tlsPolicy := mail.TLSOpportunistic
+	if !m.config.UseTLS {
+		tlsPolicy = mail.NoTLS
+	}
+
 	// Build client options
 	clientOptions := []mail.Option{
 		mail.WithPort(m.config.SMTPPort),
-		mail.WithTLSPolicy(mail.TLSOpportunistic),
+		mail.WithTLSPolicy(tlsPolicy),
 		mail.WithTimeout(10 * time.Second),
 	}
 
