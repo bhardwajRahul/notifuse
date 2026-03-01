@@ -372,6 +372,31 @@ func (s *EmailService) SendEmailForTemplate(ctx context.Context, request domain.
 		return fmt.Errorf("failed to process subject with Liquid: %w", err)
 	}
 
+	// Allow override of subject via email options
+	if request.EmailOptions.Subject != nil && *request.EmailOptions.Subject != "" {
+		overrideSubject, err := notifuse_mjml.ProcessLiquidTemplate(
+			*request.EmailOptions.Subject,
+			request.MessageData.Data,
+			"email_subject_override",
+		)
+		if err != nil {
+			s.logger.WithFields(map[string]interface{}{
+				"error":       err.Error(),
+				"message_id":  request.MessageID,
+				"template_id": request.TemplateConfig.TemplateID,
+				"subject":     *request.EmailOptions.Subject,
+			}).Error("Failed to process subject override with Liquid templating")
+			tracing.MarkSpanError(ctx, err)
+			return fmt.Errorf("failed to process subject override with Liquid: %w", err)
+		}
+		s.logger.WithFields(map[string]interface{}{
+			"message_id":       request.MessageID,
+			"default_subject":  subject,
+			"override_subject": overrideSubject,
+		}).Debug("Using subject override")
+		subject = overrideSubject
+	}
+
 	htmlContent := *compiledTemplate.HTML
 	now := time.Now().UTC()
 

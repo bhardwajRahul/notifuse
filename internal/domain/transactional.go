@@ -386,6 +386,11 @@ func (req *SendTransactionalRequest) Validate() error {
 		return NewValidationError(fmt.Sprintf("replyTo '%s' must be a valid email address", req.Notification.EmailOptions.ReplyTo))
 	}
 
+	// validate subject override length if provided
+	if req.Notification.EmailOptions.Subject != nil && len(*req.Notification.EmailOptions.Subject) > 255 {
+		return NewValidationError("subject length must not exceed 255 characters")
+	}
+
 	// validate attachments if provided
 	if len(req.Notification.EmailOptions.Attachments) > 0 {
 		if err := ValidateAttachments(req.Notification.EmailOptions.Attachments); err != nil {

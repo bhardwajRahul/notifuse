@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [27.4] - 2026-03-01
+
+- **Notification Center**: Fixed browser language auto-save overwriting contact's manually chosen language. Now only auto-detects when contact has no language set.
+- **Email Builder**: Fixed missing MJML component defaults (border-radius, borders, background, direction, textAlign) causing styles not to render in the WYSIWYG editor
+- **Transactional Emails**: Added `subject` override to `email_options`, allowing dynamic email subject lines per API call with Liquid templating support (#281)
+
 ## [27.3] - 2026-02-28
 
 - **Segments**: Added template filter to email activity conditions, allowing segments like "opened template X at least 3 times"

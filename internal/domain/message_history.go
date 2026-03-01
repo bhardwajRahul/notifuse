@@ -44,6 +44,7 @@ type MessageEventUpdate struct {
 type ChannelOptions struct {
 	// Email-specific options
 	FromName *string  `json:"from_name,omitempty"`
+	Subject  *string  `json:"subject,omitempty"`
 	CC       []string `json:"cc,omitempty"`
 	BCC      []string `json:"bcc,omitempty"`
 	ReplyTo  string   `json:"reply_to,omitempty"`

@@ -1249,14 +1249,23 @@ func TestChannelOptions_Value(t *testing.T) {
 			wantErr:  false,
 		},
 		{
+			name: "with subject only",
+			options: ChannelOptions{
+				Subject: stringPtr("Custom Subject"),
+			},
+			expected: `{"subject":"Custom Subject"}`,
+			wantErr:  false,
+		},
+		{
 			name: "with all fields",
 			options: ChannelOptions{
 				FromName: stringPtr("Test Sender"),
+				Subject:  stringPtr("Custom Subject"),
 				CC:       []string{"cc@example.com"},
 				BCC:      []string{"bcc@example.com"},
 				ReplyTo:  "reply@example.com",
 			},
-			expected: `{"from_name":"Test Sender","cc":["cc@example.com"],"bcc":["bcc@example.com"],"reply_to":"reply@example.com"}`,
+			expected: `{"from_name":"Test Sender","subject":"Custom Subject","cc":["cc@example.com"],"bcc":["bcc@example.com"],"reply_to":"reply@example.com"}`,
 			wantErr:  false,
 		},
 	}
@@ -1345,10 +1354,18 @@ func TestChannelOptions_Scan(t *testing.T) {
 			},
 		},
 		{
+			name:  "valid json - with subject",
+			input: []byte(`{"subject":"Custom Subject"}`),
+			want: &ChannelOptions{
+				Subject: stringPtr("Custom Subject"),
+			},
+		},
+		{
 			name:  "valid json - with all fields",
-			input: []byte(`{"from_name":"Test Sender","cc":["cc@example.com"],"bcc":["bcc@example.com"],"reply_to":"reply@example.com"}`),
+			input: []byte(`{"from_name":"Test Sender","subject":"Custom Subject","cc":["cc@example.com"],"bcc":["bcc@example.com"],"reply_to":"reply@example.com"}`),
 			want: &ChannelOptions{
 				FromName: stringPtr("Test Sender"),
+				Subject:  stringPtr("Custom Subject"),
 				CC:       []string{"cc@example.com"},
 				BCC:      []string{"bcc@example.com"},
 				ReplyTo:  "reply@example.com",
@@ -1375,6 +1392,7 @@ func TestChannelOptions_Scan(t *testing.T) {
 
 			if tt.input == nil {
 				assert.Nil(t, co.FromName)
+				assert.Nil(t, co.Subject)
 				assert.Empty(t, co.CC)
 				assert.Empty(t, co.BCC)
 				assert.Empty(t, co.ReplyTo)
@@ -1386,6 +1404,13 @@ func TestChannelOptions_Scan(t *testing.T) {
 			} else {
 				require.NotNil(t, co.FromName)
 				assert.Equal(t, *tt.want.FromName, *co.FromName)
+			}
+
+			if tt.want.Subject == nil {
+				assert.Nil(t, co.Subject)
+			} else {
+				require.NotNil(t, co.Subject)
+				assert.Equal(t, *tt.want.Subject, *co.Subject)
 			}
 
 			assert.Equal(t, tt.want.CC, co.CC)

@@ -1449,6 +1449,41 @@ func TestEmailOptions_FromNameField(t *testing.T) {
 	})
 }
 
+func TestEmailOptions_SubjectField(t *testing.T) {
+	t.Run("EmailOptions with no subject", func(t *testing.T) {
+		options := EmailOptions{
+			CC:      []string{"cc@example.com"},
+			BCC:     []string{"bcc@example.com"},
+			ReplyTo: "reply@example.com",
+		}
+
+		assert.Nil(t, options.Subject)
+		assert.Equal(t, 1, len(options.CC))
+		assert.Equal(t, 1, len(options.BCC))
+	})
+
+	t.Run("EmailOptions with subject set", func(t *testing.T) {
+		subject := "Custom Subject Line"
+		options := EmailOptions{
+			Subject: &subject,
+			CC:      []string{"cc@example.com"},
+		}
+
+		assert.NotNil(t, options.Subject)
+		assert.Equal(t, "Custom Subject Line", *options.Subject)
+	})
+
+	t.Run("EmailOptions with empty subject", func(t *testing.T) {
+		subject := ""
+		options := EmailOptions{
+			Subject: &subject,
+		}
+
+		assert.NotNil(t, options.Subject)
+		assert.Equal(t, "", *options.Subject)
+	})
+}
+
 func TestEmailOptions_JSONMarshaling(t *testing.T) {
 	t.Run("JSON marshal without from_name", func(t *testing.T) {
 		options := EmailOptions{
@@ -1529,6 +1564,59 @@ func TestEmailOptions_JSONMarshaling(t *testing.T) {
 		assert.NotNil(t, options.FromName)
 		assert.Equal(t, "", *options.FromName)
 	})
+
+	t.Run("JSON marshal with subject", func(t *testing.T) {
+		subject := "Override Subject"
+		options := EmailOptions{
+			Subject: &subject,
+			CC:      []string{"cc@example.com"},
+		}
+
+		jsonBytes, err := json.Marshal(options)
+		require.NoError(t, err)
+
+		jsonString := string(jsonBytes)
+		assert.Contains(t, jsonString, "subject")
+		assert.Contains(t, jsonString, "Override Subject")
+
+		var unmarshaled EmailOptions
+		err = json.Unmarshal(jsonBytes, &unmarshaled)
+		require.NoError(t, err)
+
+		assert.NotNil(t, unmarshaled.Subject)
+		assert.Equal(t, "Override Subject", *unmarshaled.Subject)
+	})
+
+	t.Run("JSON unmarshal with null subject", func(t *testing.T) {
+		jsonString := `{"subject": null, "cc": ["cc@example.com"]}`
+
+		var options EmailOptions
+		err := json.Unmarshal([]byte(jsonString), &options)
+		require.NoError(t, err)
+
+		assert.Nil(t, options.Subject)
+	})
+
+	t.Run("JSON unmarshal without subject field", func(t *testing.T) {
+		jsonString := `{"cc": ["cc@example.com"], "reply_to": "reply@example.com"}`
+
+		var options EmailOptions
+		err := json.Unmarshal([]byte(jsonString), &options)
+		require.NoError(t, err)
+
+		assert.Nil(t, options.Subject)
+	})
+
+	t.Run("JSON unmarshal with empty string subject", func(t *testing.T) {
+		jsonString := `{"subject": "", "cc": ["cc@example.com"]}`
+
+		var options EmailOptions
+		err := json.Unmarshal([]byte(jsonString), &options)
+		require.NoError(t, err)
+
+		assert.NotNil(t, options.Subject)
+		assert.Equal(t, "", *options.Subject)
+	})
 }
 
 func TestEmailOptions_IsEmpty(t *testing.T) {
@@ -1566,10 +1654,20 @@ func TestEmailOptions_IsEmpty(t *testing.T) {
 		assert.False(t, options.IsEmpty())
 	})
 
+	t.Run("EmailOptions with Subject only", func(t *testing.T) {
+		subject := "Custom Subject"
+		options := EmailOptions{
+			Subject: &subject,
+		}
+		assert.False(t, options.IsEmpty())
+	})
+
 	t.Run("EmailOptions with all fields", func(t *testing.T) {
 		fromName := "Test Sender"
+		subject := "Custom Subject"
 		options := EmailOptions{
 			FromName: &fromName,
+			Subject:  &subject,
 			CC:       []string{"cc@example.com"},
 			BCC:      []string{"bcc@example.com"},
 			ReplyTo:  "reply@example.com",
@@ -1598,10 +1696,27 @@ func TestEmailOptions_ToChannelOptions(t *testing.T) {
 		assert.Empty(t, channelOptions.ReplyTo)
 	})
 
+	t.Run("EmailOptions with Subject only", func(t *testing.T) {
+		subject := "Custom Subject"
+		options := EmailOptions{
+			Subject: &subject,
+		}
+		channelOptions := options.ToChannelOptions()
+		require.NotNil(t, channelOptions)
+		assert.NotNil(t, channelOptions.Subject)
+		assert.Equal(t, subject, *channelOptions.Subject)
+		assert.Nil(t, channelOptions.FromName)
+		assert.Empty(t, channelOptions.CC)
+		assert.Empty(t, channelOptions.BCC)
+		assert.Empty(t, channelOptions.ReplyTo)
+	})
+
 	t.Run("EmailOptions with all fields", func(t *testing.T) {
 		fromName := "Test Sender"
+		subject := "Custom Subject"
 		options := EmailOptions{
 			FromName: &fromName,
+			Subject:  &subject,
 			CC:       []string{"cc1@example.com", "cc2@example.com"},
 			BCC:      []string{"bcc@example.com"},
 			ReplyTo:  "reply@example.com",
@@ -1609,6 +1724,7 @@ func TestEmailOptions_ToChannelOptions(t *testing.T) {
 		channelOptions := options.ToChannelOptions()
 		require.NotNil(t, channelOptions)
 		assert.Equal(t, fromName, *channelOptions.FromName)
+		assert.Equal(t, subject, *channelOptions.Subject)
 		assert.Equal(t, 2, len(channelOptions.CC))
 		assert.Contains(t, channelOptions.CC, "cc1@example.com")
 		assert.Contains(t, channelOptions.CC, "cc2@example.com")

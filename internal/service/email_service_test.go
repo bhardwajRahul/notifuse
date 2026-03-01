@@ -978,6 +978,126 @@ func TestEmailService_SendEmailForTemplate(t *testing.T) {
 		require.NoError(t, err)
 	})
 
+	t.Run("sends email with subject override processed through Liquid", func(t *testing.T) {
+		// Setup workspace mock
+		workspace := &domain.Workspace{
+			ID: workspaceID,
+			Settings: domain.WorkspaceSettings{
+				CustomEndpointURL: nil,
+			},
+		}
+		mockWorkspaceRepo.EXPECT().
+			GetByID(gomock.Any(), workspaceID).
+			Return(workspace, nil)
+
+		// Setup template service mock
+		mockTemplateService.EXPECT().
+			GetTemplateByID(gomock.Any(), workspaceID, templateConfig.TemplateID, int64(0)).
+			Return(emailTemplate, nil)
+
+		// Setup compile template mock
+		mockTemplateService.EXPECT().
+			CompileTemplate(gomock.Any(), gomock.Any()).
+			Return(compileResult, nil)
+
+		// Setup message repository mock
+		mockMessageRepo.EXPECT().
+			Create(gomock.Any(), workspaceID, gomock.Any(), gomock.Any()).
+			Return(nil)
+
+		// Setup email provider mock - capture the request to verify subject
+		mockSESService.EXPECT().
+			SendEmail(
+				gomock.Any(),
+				gomock.Any(),
+			).DoAndReturn(func(ctx context.Context, req domain.SendEmailProviderRequest) error {
+				// Verify the subject was overridden and Liquid processed
+				assert.Equal(t, "Override Test User", req.Subject)
+				return nil
+			})
+
+		// Call method under test with subject override
+		overrideSubject := "Override {{ name }}"
+		subjectOptions := domain.EmailOptions{
+			Subject: &overrideSubject,
+			ReplyTo: emailTemplate.Email.ReplyTo,
+		}
+		request := domain.SendEmailRequest{
+			WorkspaceID:      workspaceID,
+			IntegrationID:    "test-integration-id",
+			MessageID:        messageID,
+			ExternalID:       nil,
+			Contact:          contact,
+			TemplateConfig:   templateConfig,
+			MessageData:      messageData,
+			TrackingSettings: trackingSettings,
+			EmailProvider:    emailProvider,
+			EmailOptions:     subjectOptions,
+		}
+		err := emailService.SendEmailForTemplate(ctx, request)
+		require.NoError(t, err)
+	})
+
+	t.Run("empty subject override uses template default", func(t *testing.T) {
+		// Setup workspace mock
+		workspace := &domain.Workspace{
+			ID: workspaceID,
+			Settings: domain.WorkspaceSettings{
+				CustomEndpointURL: nil,
+			},
+		}
+		mockWorkspaceRepo.EXPECT().
+			GetByID(gomock.Any(), workspaceID).
+			Return(workspace, nil)
+
+		// Setup template service mock
+		mockTemplateService.EXPECT().
+			GetTemplateByID(gomock.Any(), workspaceID, templateConfig.TemplateID, int64(0)).
+			Return(emailTemplate, nil)
+
+		// Setup compile template mock
+		mockTemplateService.EXPECT().
+			CompileTemplate(gomock.Any(), gomock.Any()).
+			Return(compileResult, nil)
+
+		// Setup message repository mock
+		mockMessageRepo.EXPECT().
+			Create(gomock.Any(), workspaceID, gomock.Any(), gomock.Any()).
+			Return(nil)
+
+		// Setup email provider mock - capture the request to verify subject uses template default
+		mockSESService.EXPECT().
+			SendEmail(
+				gomock.Any(),
+				gomock.Any(),
+			).DoAndReturn(func(ctx context.Context, req domain.SendEmailProviderRequest) error {
+				// Verify the subject is the template default (processed through Liquid)
+				assert.Equal(t, "Welcome to Our Service", req.Subject)
+				return nil
+			})
+
+		// Call method under test with empty subject override (should use template default)
+		emptySubject := ""
+		subjectOptions := domain.EmailOptions{
+			Subject: &emptySubject,
+			ReplyTo: emailTemplate.Email.ReplyTo,
+		}
+		request := domain.SendEmailRequest{
+			WorkspaceID:      workspaceID,
+			IntegrationID:    "test-integration-id",
+			MessageID:        messageID,
+			ExternalID:       nil,
+			Contact:          contact,
+			TemplateConfig:   templateConfig,
+			MessageData:      messageData,
+			TrackingSettings: trackingSettings,
+			EmailProvider:    emailProvider,
+			EmailOptions:     subjectOptions,
+		}
+		err := emailService.SendEmailForTemplate(ctx, request)
+		require.NoError(t, err)
+	})
+
 	t.Run("Error getting template", func(t *testing.T) {
 		// Setup template service mock to return an error
 		mockTemplateService.EXPECT().

@@ -36,6 +36,7 @@ export interface Attachment {
 
 export interface EmailOptions {
   from_name?: string
+  subject?: string
   reply_to?: string
   cc?: string[]
   bcc?: string[]

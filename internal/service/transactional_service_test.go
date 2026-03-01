@@ -2086,18 +2086,26 @@ func TestTransactionalNotificationService_TestTemplate_WithChannelOptions(t *tes
 		CompileTemplate(gomock.Any(), gomock.Any()).
 		Return(compilationResult, nil)
 
-	// Expect send email with options
+	// Expect send email with options - verify subject override was applied
 	mockEmailService.EXPECT().
 		SendEmail(
 			gomock.Any(),
 			gomock.Any(), // SendEmailProviderRequest
 			gomock.Any(), // isMarketing
-		).Return(nil)
+		).DoAndReturn(func(ctx context.Context, req domain.SendEmailProviderRequest, isMarketing bool) error {
+			// Verify the subject was overridden
+			assert.Equal(t, "Override Subject", req.Subject)
+			// Verify the from name was overridden
+			assert.Equal(t, "Custom Sender", req.FromName)
+			return nil
+		})
 
 	// Expect message history creation with ChannelOptions
 	fromName := "Custom Sender"
+	overrideSubject := "Override Subject"
 	emailOptions := domain.EmailOptions{
 		FromName: &fromName,
+		Subject:  &overrideSubject,
 		CC:       []string{"cc@example.com"},
 		BCC:      []string{"bcc@example.com"},
 		ReplyTo:  "reply@example.com",
@@ -2110,6 +2118,8 @@ func TestTransactionalNotificationService_TestTemplate_WithChannelOptions(t *tes
 			require.NotNil(t, message.ChannelOptions)
 			require.NotNil(t, message.ChannelOptions.FromName)
 			assert.Equal(t, "Custom Sender", *message.ChannelOptions.FromName)
+			require.NotNil(t, message.ChannelOptions.Subject)
+			assert.Equal(t, "Override Subject", *message.ChannelOptions.Subject)
 			assert.Equal(t, []string{"cc@example.com"}, message.ChannelOptions.CC)
 			assert.Equal(t, []string{"bcc@example.com"}, message.ChannelOptions.BCC)
 			assert.Equal(t, "reply@example.com", message.ChannelOptions.ReplyTo)

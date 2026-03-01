@@ -816,6 +816,19 @@ func (s *TransactionalNotificationService) TestTemplate(ctx context.Context, wor
 		return fmt.Errorf("failed to process subject with Liquid: %w", err)
 	}
 
+	// Allow override of subject via email options
+	if emailOptions.Subject != nil && *emailOptions.Subject != "" {
+		overrideSubject, err := notifuse_mjml.ProcessLiquidTemplate(
+			*emailOptions.Subject,
+			messageData,
+			"email_subject_override",
+		)
+		if err != nil {
+			return fmt.Errorf("failed to process subject override with Liquid: %w", err)
+		}
+		processedSubject = overrideSubject
+	}
+
 	// Create SendEmailProviderRequest
 	emailRequest := domain.SendEmailProviderRequest{
 		WorkspaceID:   workspaceID,
